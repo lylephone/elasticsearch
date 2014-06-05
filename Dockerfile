@@ -14,6 +14,8 @@ RUN \
   tar xvzf elasticsearch-1.2.1.tar.gz && \
   rm -f elasticsearch-1.2.1.tar.gz && \
   mv /tmp/elasticsearch-1.2.1 /elasticsearch
+
+# Install Plugins.
 RUN \
   /elasticsearch/bin/plugin -install elasticsearch/elasticsearch-analysis-kuromoji/2.2.0
 RUN \
@@ -22,6 +24,7 @@ RUN \
   /elasticsearch/bin/plugin -install lmenezes/elasticsearch-kopf/1.2
 RUN \
   /elasticsearch/bin/plugin -install knapsack -url http://xbib.org/repository/org/xbib/elasticsearch/plugin/elasticsearch-knapsack/1.2.0.0/elasticsearch-knapsack-1.2.0.0-plugin-s3.zip
+
 
 # Define mountable directories.
 VOLUME ["/data"]
