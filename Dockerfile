@@ -3,10 +3,12 @@
 #
 # https://github.com/umeice/elasticsearch
 #
- 
+
 # Pull base image.
 FROM dockerfile/java
- 
+
+MAINTAINER @bungoume <bungoume@gmail.com>
+
 # Install ElasticSearch.
 RUN \
   cd /tmp && \
@@ -19,12 +21,19 @@ RUN \
 RUN \
   /elasticsearch/bin/plugin -install elasticsearch/elasticsearch-analysis-kuromoji/2.2.0
 RUN \
-  /elasticsearch/bin/plugin -install mobz/elasticsearch-head
+  /elasticsearch/bin/plugin -install elasticsearch/elasticsearch-analysis-icu/2.2.0
 RUN \
   /elasticsearch/bin/plugin -install lmenezes/elasticsearch-kopf/1.2
 RUN \
+  /elasticsearch/bin/plugin -install elasticsearch/elasticsearch-cloud-aws/2.1.1
+RUN \
   /elasticsearch/bin/plugin -install knapsack -url http://xbib.org/repository/org/xbib/elasticsearch/plugin/elasticsearch-knapsack/1.2.0.0/elasticsearch-knapsack-1.2.0.0-plugin-s3.zip
-
+RUN \
+  /elasticsearch/bin/plugin -install mobz/elasticsearch-head
+RUN \
+  /elasticsearch/bin/plugin -install info.johtani/elasticsearch-extended-analyze/1.2.0
+RUN \
+  /elasticsearch/bin/plugin -install lukas-vlcek/bigdesk/2.4.0
 
 # Define mountable directories.
 VOLUME ["/data"]
