@@ -25,7 +25,7 @@ RUN \
 RUN \
   /elasticsearch/bin/plugin -install lmenezes/elasticsearch-kopf/1.2
 RUN \
-  /elasticsearch/bin/plugin -install elasticsearch/elasticsearch-cloud-aws/2.1.1
+  /elasticsearch/bin/plugin -install elasticsearch/elasticsearch-cloud-aws/2.2.0
 RUN \
   /elasticsearch/bin/plugin -install knapsack -url http://xbib.org/repository/org/xbib/elasticsearch/plugin/elasticsearch-knapsack/1.2.0.0/elasticsearch-knapsack-1.2.0.0-plugin-s3.zip
 RUN \
@@ -34,6 +34,11 @@ RUN \
   /elasticsearch/bin/plugin -install info.johtani/elasticsearch-extended-analyze/1.2.0
 RUN \
   /elasticsearch/bin/plugin -install lukas-vlcek/bigdesk/2.4.0
+
+# Update Ubuntu.
+RUN \
+  apt-get update && apt-get -y upgrade
+
 
 # Define mountable directories.
 VOLUME ["/data"]
