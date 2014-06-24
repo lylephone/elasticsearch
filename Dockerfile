@@ -27,6 +27,8 @@ RUN \
 RUN \
   /elasticsearch/bin/plugin -install elasticsearch/elasticsearch-cloud-aws/2.2.0
 RUN \
+  /elasticsearch/bin/plugin -install elasticsearch/marvel/latest
+RUN \
   /elasticsearch/bin/plugin -install knapsack -url http://xbib.org/repository/org/xbib/elasticsearch/plugin/elasticsearch-knapsack/1.2.0.0/elasticsearch-knapsack-1.2.0.0-plugin-s3.zip
 RUN \
   /elasticsearch/bin/plugin -install mobz/elasticsearch-head
