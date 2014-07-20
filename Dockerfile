@@ -12,10 +12,10 @@ MAINTAINER @bungoume <bungoume@gmail.com>
 # Install ElasticSearch.
 RUN \
   cd /tmp && \
-  wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.2.1.tar.gz && \
-  tar xvzf elasticsearch-1.2.1.tar.gz && \
-  rm -f elasticsearch-1.2.1.tar.gz && \
-  mv /tmp/elasticsearch-1.2.1 /elasticsearch
+  wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.2.2.tar.gz && \
+  tar xvzf elasticsearch-1.2.2.tar.gz && \
+  rm -f elasticsearch-1.2.2.tar.gz && \
+  mv /tmp/elasticsearch-1.2.2 /elasticsearch
 
 # Install Plugins.
 RUN \
