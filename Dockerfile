@@ -12,10 +12,10 @@ MAINTAINER @bungoume <bungoume@gmail.com>
 # Install ElasticSearch.
 RUN \
   cd /tmp && \
-  wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.3.0.tar.gz && \
-  tar xvzf elasticsearch-1.3.0.tar.gz && \
-  rm -f elasticsearch-1.3.0.tar.gz && \
-  mv /tmp/elasticsearch-1.3.0 /elasticsearch
+  wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.3.2.tar.gz && \
+  tar xvzf elasticsearch-1.3.2.tar.gz && \
+  rm -f elasticsearch-1.3.2.tar.gz && \
+  mv /tmp/elasticsearch-1.3.2 /elasticsearch
 
 # Install Plugins.
 RUN \
@@ -25,7 +25,7 @@ RUN \
 RUN \
   /elasticsearch/bin/plugin -install lmenezes/elasticsearch-kopf/1.2
 RUN \
-  /elasticsearch/bin/plugin -install elasticsearch/elasticsearch-cloud-aws/2.2.0
+  /elasticsearch/bin/plugin -install elasticsearch/elasticsearch-cloud-aws/2.3.0
 RUN \
   /elasticsearch/bin/plugin -install elasticsearch/marvel/latest
 RUN \
