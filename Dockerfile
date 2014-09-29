@@ -23,7 +23,7 @@ RUN \
 RUN \
   /elasticsearch/bin/plugin -install elasticsearch/elasticsearch-analysis-icu/2.3.0
 RUN \
-  /elasticsearch/bin/plugin -install lmenezes/elasticsearch-kopf/1.2
+  /elasticsearch/bin/plugin -install lmenezes/elasticsearch-kopf
 RUN \
   /elasticsearch/bin/plugin -install elasticsearch/elasticsearch-cloud-aws/2.3.0
 RUN \
