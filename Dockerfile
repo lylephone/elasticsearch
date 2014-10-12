@@ -19,23 +19,13 @@ RUN \
 
 # Install Plugins.
 RUN \
-  /elasticsearch/bin/plugin -install elasticsearch/elasticsearch-analysis-kuromoji/2.3.0
-RUN \
-  /elasticsearch/bin/plugin -install elasticsearch/elasticsearch-analysis-icu/2.3.0
-RUN \
-  /elasticsearch/bin/plugin -install lmenezes/elasticsearch-kopf
-RUN \
-  /elasticsearch/bin/plugin -install elasticsearch/elasticsearch-cloud-aws/2.3.0
-RUN \
-  /elasticsearch/bin/plugin -install elasticsearch/marvel/latest
-RUN \
+  /elasticsearch/bin/plugin -install elasticsearch/elasticsearch-analysis-kuromoji/2.3.0 && \
+  /elasticsearch/bin/plugin -install elasticsearch/elasticsearch-analysis-icu/2.3.0 && \
+  /elasticsearch/bin/plugin -install elasticsearch/elasticsearch-cloud-aws/2.3.0 && \
+  /elasticsearch/bin/plugin -install lmenezes/elasticsearch-kopf && \
+  /elasticsearch/bin/plugin -install elasticsearch/marvel/latest && \
   /elasticsearch/bin/plugin -install mobz/elasticsearch-head
-# RUN \
-#   /elasticsearch/bin/plugin -install knapsack -url http://xbib.org/repository/org/xbib/elasticsearch/plugin/elasticsearch-knapsack/1.2.0.0/elasticsearch-knapsack-1.2.0.0-plugin-s3.zip
-# RUN \
-#   /elasticsearch/bin/plugin -install info.johtani/elasticsearch-extended-analyze/1.2.0
-# RUN \
-#   /elasticsearch/bin/plugin -install lukas-vlcek/bigdesk/2.4.0
+
 
 # Update Ubuntu.
 RUN \
