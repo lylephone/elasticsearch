@@ -1,4 +1,4 @@
-cluster.name: {{ elasticsearch_cluster_name }}
+cluster.name: es_cluster
 
 index.number_of_shards: 2
 index.number_of_replicas: 0
