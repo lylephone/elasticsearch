@@ -5,21 +5,21 @@
 #
 
 # Pull base image.
-FROM elasticsearch:1.5
+FROM elasticsearch:2.4
 
 MAINTAINER @bungoume <bungoume@gmail.com>
 
 # Install Plugins.
 RUN \
-  plugin -install elasticsearch/elasticsearch-analysis-kuromoji/2.5.0 && \
-  plugin -install elasticsearch/elasticsearch-analysis-icu/2.5.0 && \
-  plugin -install elasticsearch/elasticsearch-cloud-aws/2.5.0 && \
-  plugin -install lmenezes/elasticsearch-kopf && \
-  plugin -install elasticsearch/marvel/latest && \
-  plugin -install mobz/elasticsearch-head
+  plugin install analysis-kuromoji && \
+  plugin install analysis-icu && \
+  plugin install cloud-aws && \
+  plugin install lmenezes/elasticsearch-kopf
+#  plugin install mobz/elasticsearch-head && \
+#  plugin install marvel-agent && \
 
 # Add elasticsearch.yml config
-ADD config/elasticsearch.yml /usr/share/elasticsearch/config/elasticsearch.yml
+ADD config/elasticsearch.yml /etc/elasticsearch/elasticsearch.yml
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
